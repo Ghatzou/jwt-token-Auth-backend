@@ -19,16 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //tymon jwt-auth
-Route::group([
-
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
-], function ($router) {
-
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
-
+Route::middleware('api')->prefix('auth')->group(function ($router) {
+    Route::post('login', 'App\Http\Controllers\AuthController@login');
+    Route::post('logout', 'App\Http\Controllers\AuthController@logout');
+    Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
+    Route::post('me', 'App\Http\Controllers\AuthController@me');
 });

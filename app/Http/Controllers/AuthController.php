@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 //use request validation for registration
-use App\Http\Requests;
+use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {

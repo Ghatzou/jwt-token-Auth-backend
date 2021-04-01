@@ -24,5 +24,6 @@ Route::middleware('api')->prefix('auth')->group(function ($router) {
     Route::post('register', 'App\Http\Controllers\AuthController@register');
     Route::post('logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
+    Route::post('check', 'App\Http\Controllers\AuthController@check');
     Route::post('me', 'App\Http\Controllers\AuthController@me');
 });

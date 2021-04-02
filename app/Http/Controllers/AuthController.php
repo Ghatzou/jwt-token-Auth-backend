@@ -75,9 +75,9 @@ class AuthController extends Controller
         return $this->respondWithToken(auth()->refresh());
     }
 
-    public function check() 
+    public function ping() 
     {
-        return response()->json(['message' => 'Successfully checked']);
+        return response()->json(['message' => 'Ping Pong !']);
     }
 
     /**
